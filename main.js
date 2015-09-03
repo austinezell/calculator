@@ -3,25 +3,25 @@
 $(document).ready(init);
 function init(){
   var currentVal = "";
-  var runningVal = null
+  var runningVal = null;
   var operand = null;
-  // $('.btn').click(clearError);
   $('.number').click(onNumber);
   $('.operand').click(onOperand);
   $('#clear').click(clear);
   $('#clear').dblclick(totalClear)
   $('#negative').click(onNegative);
   $('#percentage').click(onPercentage);
-  $('#equals').click(onOperand);
 
   function onNumber(){
     if(operand === 'equals' || runningVal === 'error'){
       runningVal = null;
     }
     var val = $(this).data('id');
+    if ((currentVal.indexOf('.') !== -1) && (val === '.')){
+      return;
+    }
     currentVal += val.toString();
     changeDisplay(currentVal);
-
   }
 
   function onOperand(){
@@ -30,25 +30,24 @@ function init(){
       if (runningVal !== null){
         switch (operand) {
           case 'divide':
-          if (cVal){
-            runningVal /= cVal;
-          }
-          else{
-            runningVal = 'error';
-            currentVal = ''
-            operand = null
+            if (cVal){
+              runningVal /= cVal;
+            }
+            else{
+              runningVal = 'error';
+              currentVal = ''
+              operand = null
+            }
             break;
-          }
-          break;
           case 'multiply':
-          runningVal *= cVal;
-          break;
+            runningVal *= cVal;
+            break;
           case 'subtract':
-          runningVal -= cVal;
-          break;
+            runningVal -= cVal;
+            break;
           case 'addition':
-          runningVal += cVal;
-          break;
+            runningVal += cVal;
+            break;
         }
         changeDisplay(runningVal);
       }
@@ -63,6 +62,13 @@ function init(){
   function clear(){
     currentVal = '';
     changeDisplay('0');
+  }
+
+  function totalClear(){
+    currentVal = "";
+    runningVal = null
+    operand = null;
+    changeDisplay('0')
   }
 
   function onNegative(){
@@ -88,22 +94,6 @@ function init(){
   function getHolderVal(){
     return $('#currentVal').text()
   }
-
-  function totalClear(){
-    currentVal = "";
-    runningVal = null
-    operand = null;
-    changeDisplay('0')
-  }
-
-  // function clearError(){
-  //   if (runningVal === 'error'){
-  //     console.log('i work, bitch');
-  //     var currentVal = "";
-  //     var runningVal = null
-  //     var operand = null;
-  //   }
-  // }
 
   function changeDisplay(value){
     $('#currentVal').text(value);
