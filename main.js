@@ -2,33 +2,33 @@
 
 $(document).ready(init);
 function init(){
-  var currentVal = "";
+  var currentVal = '';
   var runningVal = null;
-  var operand = null;
+  var $operand = null;
   $('.number').click(onNumber);
-  $('.operand').click(onOperand);
+  $('.operand').click(grandMasterFunktion);
   $('#clear').click(clear);
   $('#clear').dblclick(totalClear)
   $('#negative').click(onNegative);
   $('#percentage').click(onPercentage);
 
   function onNumber(){
-    if(operand === 'equals' || runningVal === 'error'){
+    if($operand === 'equals' || runningVal === 'error'){
       runningVal = null;
     }
-    var val = $(this).data('id');
-    if ((currentVal.indexOf('.') !== -1) && (val === '.')){
+    var $val = $(this).data('id');
+    if ((currentVal.indexOf('.') !== -1) && ($val === '.')){
       return;
     }
-    currentVal += val.toString();
+    currentVal += $val.toString();
     changeDisplay(currentVal);
   }
 
-  function onOperand(){
+  function grandMasterFunktion(){
     if (currentVal !== ''){
       var cVal = parseFloat(currentVal);
       if (runningVal !== null){
-        switch (operand) {
+        switch ($operand) {
           case 'divide':
             if (cVal){
               runningVal /= cVal;
@@ -36,7 +36,7 @@ function init(){
             else{
               runningVal = 'error';
               currentVal = ''
-              operand = null
+              $operand = null
             }
             break;
           case 'multiply':
@@ -55,7 +55,7 @@ function init(){
         runningVal = cVal;
       }
     };
-    operand = $(this).data('id');
+    $operand = $(this).data('id');
     currentVal = '';
   }
 
@@ -67,7 +67,7 @@ function init(){
   function totalClear(){
     currentVal = "";
     runningVal = null
-    operand = null;
+    $operand = null;
     changeDisplay('0')
   }
 
