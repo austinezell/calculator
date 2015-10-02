@@ -13,15 +13,17 @@ function init(){
   $('#percentage').click(onPercentage);
 
   function onNumber(){
-    if($operand === 'equals' || runningVal === 'error'){
-      runningVal = null;
+    if (currentVal.length < 13){
+      if($operand === 'equals' || runningVal === 'error'){
+        runningVal = null;
+      }
+      var $val = $(this).data('id');
+      if ((currentVal.indexOf('.') !== -1) && ($val === '.')){
+        return;
+      }
+      currentVal += $val.toString();
+      changeDisplay(currentVal);
     }
-    var $val = $(this).data('id');
-    if ((currentVal.indexOf('.') !== -1) && ($val === '.')){
-      return;
-    }
-    currentVal += $val.toString();
-    changeDisplay(currentVal);
   }
 
   function grandMasterFunktion(){
@@ -30,24 +32,24 @@ function init(){
       if (runningVal !== null){
         switch ($operand) {
           case 'divide':
-            if (cVal){
-              runningVal /= cVal;
-            }
-            else{
-              runningVal = 'error';
-              currentVal = ''
-              $operand = null
-            }
-            break;
+          if (cVal){
+            runningVal /= cVal;
+          }
+          else{
+            runningVal = 'error';
+            currentVal = ''
+            $operand = null
+          }
+          break;
           case 'multiply':
-            runningVal *= cVal;
-            break;
+          runningVal *= cVal;
+          break;
           case 'subtract':
-            runningVal -= cVal;
-            break;
+          runningVal -= cVal;
+          break;
           case 'addition':
-            runningVal += cVal;
-            break;
+          runningVal += cVal;
+          break;
         }
         changeDisplay(runningVal);
       }
