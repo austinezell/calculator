@@ -1,19 +1,50 @@
 .myButton {
-    width: 60px;
+  width: 60px;
+}
+
+.display {
+  border-left: lightgrey 2px solid;
+  border-top: lightgrey 2px solid;
+  border-radius: 2px 5px 2px 3px;
 }
 
 .myOtherButton {
-  width: 124px;
+  width: 140px;
+}
+.shadow {
+  color: rgba(74, 74, 74, 0.98);
 }
 
-.number{
-
+.displayContainer{
+  background-color: grey;
+  padding-top: 15px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-right: 8px solid rgba(74, 74, 74, 0.98);
+}
+.display{
+  width: 90%;
+  background-color: black;
+}
+.display h1 {
+    color: rgb(240, 227, 62);
 }
 
+.buttonContainer{
+  padding-top: 10px;
+  background-color: grey;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border-bottom: 8px solid rgba(74, 74, 74, 0.98);
+  border-right: 8px solid rgba(74, 74, 74, 0.98);
+}
 .randos{
   background-color: rgb(31, 210, 178);
 }
+.button {
+  border-bottom: 3px solid rgba(74, 74, 74, 0.98);
+  border-right: 3px solid rgba(74, 74, 74, 0.98);
+}
 .operand{
-
   background-color: purple;
 }

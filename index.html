@@ -1,51 +1,53 @@
 <html>
 <head>
-  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/js/foundation.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8">
   <title>Calculator</title>
 </head>
 <body>
-  <div class="container">
-
-    <div class='row text-right' id='currentEntry'>
-      <h1 id='currentVal'>0</h1>
+<br>
+  <div class="columns medium-3 medium-centered displayContainer">
+    <div class='row display'>
+      <h1 class='right' id='currentVal'>0</h1>
     </div>
   </div>
-  <div class="container text-right">
-
-    <div class="row">
-      <button id='clear' class='btn btn-lg myButton randos'>cl</button>
-      <button id='negative' class='btn btn-lg myButton randos'>+/-</button>
-      <button id='percentage' class='btn btn-lg myButton randos'>%</button>
-      <button data-id='divide' class='btn btn-lg myButton operand'>/</button>
-    </div>
-    <div class="row">
-      <button data-id='7' class='btn btn-lg myButton number'>7</button>
-      <button data-id='8' class='btn btn-lg myButton number'>8</button>
-      <button data-id='9' class='btn btn-lg myButton number'>9</button>
-      <button data-id='multiply' class='btn btn-lg myButton operand' >*</button>
-    </div>
-    <div class="row">
-      <button data-id=4 class='btn btn-lg myButton number'>4</button>
-      <button data-id=5 class='btn btn-lg myButton number'>5</button>
-      <button data-id=6 class='btn btn-lg myButton number'>6</button>
-      <button data-id='subtract' class='btn btn-lg myButton operand'>-</button>
-    </div>
-    <div class="row">
-      <button data-id='1' class='btn btn-lg myButton number'>1</button>
-      <button data-id='2' class='btn btn-lg myButton number'>2</button>
-      <button data-id='3' class='btn btn-lg myButton number'>3</button>
-      <button data-id='addition' class='btn btn-lg myButton operand'>+</button>
-    </div>
-    <div class="row">
-      <button data-id='0' class='btn btn-lg myOtherButton number'>0</button>
-      <button data-id='.' class='btn btn-lg myButton number'>.</button>
-      <button data-id='equals' class='btn btn-lg myButton operand'>=</button>
-    </div>
+</div>
+<div align=center class="columns medium-3 medium-centered buttonContainer">
+  <div class="row">
+    <button id='clear' class='button myButton radius randos'>cl</button>
+    <button id='negative' class='button myButton radius randos'>+/-</button>
+    <button id='percentage' class='button myButton radius randos'>%</button>
+    <button data-id='divide' class='button myButton radius operand'>/</button>
   </div>
-  <script src="main.js" charset="utf-8"></script>
+  <div class="row">
+    <button data-id='7' class='button myButton radius number'>7</button>
+    <button data-id='8' class='button myButton radius number'>8</button>
+    <button data-id='9' class='button myButton radius number'>9</button>
+    <button data-id='multiply' class='button myButton radius operand' >*</button>
+  </div>
+  <div class="row">
+    <button data-id=4 class='button myButton radius number'>4</button>
+    <button data-id=5 class='button myButton radius number'>5</button>
+    <button data-id=6 class='button myButton radius number'>6</button>
+    <button data-id='subtract' class='button myButton radius operand'>-</button>
+  </div>
+  <div class="row">
+    <button data-id='1' class='button myButton radius number'>1</button>
+    <button data-id='2' class='button myButton radius number'>2</button>
+    <button data-id='3' class='button myButton radius number'>3</button>
+    <button data-id='addition' class='button myButton radius operand'>+</button>
+  </div>
+  <div class="row">
+    <button data-id='0' class='button myOtherButton number'>0</button>
+    <button data-id='.' class='button myButton radius number'>.</button>
+    <button data-id='equals' class='button myButton radius operand'>=</button>
+  </div>
+  <br>
+
+</div>
+<script src="main.js" charset="utf-8"></script>
 </body>
 </html>

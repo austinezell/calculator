@@ -13,7 +13,7 @@ function init(){
   $('#percentage').click(onPercentage);
 
   function onNumber(){
-    if (currentVal.length < 13){
+    if (currentVal.length < 11){
       if($operand === 'equals' || runningVal === 'error'){
         runningVal = null;
       }
