@@ -1,3 +1,6 @@
+body {
+}
+
 .myButton {
   width: 60px;
 }
@@ -11,7 +14,7 @@
 }
 
 .displayContainer{
-  width: 325px;
+  width: 330px;
   background-color: grey;
   padding-top: 15px;
   border-top-left-radius: 15px;
@@ -26,11 +29,12 @@
   border-radius: 2px 5px 2px 3px;
 }
 .display h1 {
-    color: rgb(240, 227, 62);
+  font-family: Courier, "Lucida Console", monospace;
+  color: rgb(240, 227, 62);
 }
 
 .buttonContainer{
-  width: 325px;
+  width: 330px;
   padding-top: 10px;
   background-color: grey;
   border-bottom-right-radius: 15px;

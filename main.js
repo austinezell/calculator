@@ -13,7 +13,7 @@ function init(){
   $('#percentage').click(onPercentage);
 
   function onNumber(){
-    if (currentVal.length < 11){
+    if (currentVal.length < 10){
       if($operand === 'equals' || runningVal === 'error'){
         runningVal = null;
       }
@@ -51,7 +51,7 @@ function init(){
           runningVal += cVal;
           break;
         }
-        changeDisplay(runningVal);
+        changeDisplay(runningVal.toFixed(2));
       }
       else{
         runningVal = cVal;
@@ -98,6 +98,14 @@ function init(){
   }
 
   function changeDisplay(value){
-    $('#currentVal').text(value);
+    if (value.toString().length > 10){
+      value = parseFloat(value);
+      $('#currentVal').text(value.toPrecision(5));
+    }
+    else{
+      $('#currentVal').text(value);
+
+    }
   }
+
 };
