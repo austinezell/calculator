@@ -52,3 +52,12 @@ body {
 .operand{
   background-color: purple;
 }
+
+
+.githublink {
+  background-color: ghostwhite;
+  position: fixed;
+  width: 40%;
+  left: 0;
+  bottom: 5%;
+}
